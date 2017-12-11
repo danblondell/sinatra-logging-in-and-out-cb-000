@@ -29,9 +29,9 @@ class ApplicationController < Sinatra::Base
     # end
 
     if !Helpers.is_logged_in?(session)
-      erb :error
-    else
       erb :account
+    else
+      erb :error
     end
   end
 
