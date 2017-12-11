@@ -7,17 +7,12 @@
   </head>
   <body id="page-top">
 
-    <% if Helper.is_logged_in?(session) %>
 
-      <% user = Helper.current_user(session) %>
-      
-      <%= user.username %>
-      <%= user.balance %>
-      <a href="/logout">Log Out</a>
+    <% @user = Helpers.current_user(session) %>
+    <h1><%= "Welcome #{@user.username}" %></h1>
+    <h3><%= "Your balance: #{@user.balance.to_f}" %></h3>
+    <a href="/logout">Log Out</a>
 
-    <% else %>
-      <% erb :error %>
-    <% end %>
 
   </body>
 </html>
