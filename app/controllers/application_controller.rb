@@ -28,7 +28,7 @@ class ApplicationController < Sinatra::Base
     #   erb :error
     # end
 
-    if session[:user_id] != nil
+    if Helper.is_logged_in?(session)
       erb :account
     else
       erb :error
